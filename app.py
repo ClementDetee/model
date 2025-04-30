@@ -11,7 +11,7 @@ import cv2 # OpenCV pour certains prétraitements si nécessaire
 def load_model():
     """Charge le modèle Keras depuis le fichier .h5"""
     try:
-        model = tf.keras.models.load_model('keras_model.h5', compile=False) # compile=False est souvent nécessaire pour les modèles TM
+        model = tf.keras.models.load_model("https://github.com/ClementDetee/model/raw/refs/heads/main/keras_model.h5", compile=False) # compile=False est souvent nécessaire pour les modèles TM
         return model
     except Exception as e:
         st.error(f"Erreur lors du chargement du modèle : {e}")
@@ -21,7 +21,7 @@ def load_model():
 def load_labels():
     """Charge les noms des classes depuis labels.txt"""
     try:
-        with open('labels.txt', 'r') as f:
+        with open("https://github.com/ClementDetee/model/raw/refs/heads/main/labels.txt", 'r') as f:
             # Lire les lignes, enlever les numéros et les espaces superflus
             class_names = [line.strip().split(' ', 1)[1] for line in f if line.strip()]
         return class_names
